@@ -1,3 +1,5 @@
+//TodolistPage.tsx
+
 import TaskCard from "../components/TaskCard";
 import TodoModal from "../components/Modal";
 import { type TaskCardProps } from "../libs/Todolist";
@@ -45,11 +47,17 @@ function App() {
     setTasks(newTasks);
   };
 
+  //All
+  const alL = tasks.length;
+
+  //Done
+  const donE = tasks.filter((task: TaskCardProps) => task.isDone).length;
+
   return (
     <div className="col-12 m-2 p-0">
       <div className="container text-center">
         <h2>Todo List</h2>
-        <span className="m-2">All : () Done : ()</span>
+        <span className="m-2">All : ({alL}) Done : ({donE})</span>
         {/* Modal Component */}
         <button
           type="button"
